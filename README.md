@@ -16,7 +16,7 @@ This early release features fast-paced gameplay, a stylish design and challenges
 [Play the game on Unity Play](https://play.unity.com/en/games/e59de455-5914-49e6-90d7-e9e5d8ceab5b/cubix)
 
 - Movement: Use the arrow keys or WASD.
-- Dodge the obstacles and collect the coins and collect the cubes to gain health.
+- Dodge the obstacles, collect the coins and collect the cubes to gain size.
 - Try to get the highest score as the pace of the game gradually increases.
 
 ## Features
