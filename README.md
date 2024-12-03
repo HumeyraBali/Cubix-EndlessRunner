@@ -30,6 +30,7 @@ This early release features fast-paced gameplay, a stylish design and challenges
   <img src="Source_Images/3.png" alt="Screenshot 3" width="45%" style="margin: 2.5%;" />
   <img src="Source_Images/4.png" alt="Screenshot 4" width="45%" style="margin: 2.5%;" />
 </p>
+
 - **Player Mechanics**:
   - Horizontal line change movement with arrow keys. ( 3 line )
   - Acceleration over time.
@@ -59,6 +60,7 @@ This early release features fast-paced gameplay, a stylish design and challenges
   <img src="Source_Images/7.png" alt="Screenshot 3" width="45%" style="margin: 2.5%;" />
   <img src="Source_Images/8.png" alt="Screenshot 4" width="45%" style="margin: 2.5%;" />
 </p>
+
 - **Player Mechanics**:
   - Size increase and decrease.
   - Acceleration depends on level maximum speed.
