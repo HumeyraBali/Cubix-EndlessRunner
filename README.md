@@ -9,7 +9,7 @@
 - [Credits](#credits)
 
 ## Overview
-Guide your neon cube through a glowing endless map! Shrink as you go, grow by collecting cubes and dodge neon obstacles. Stay alive or explode into glowing pieces! ✨. 
+Navigate a neon cube through a glowing endless map! Shrink as you go, grow by collecting cubes and dodge vibrant obstacles. Stay alive or explode into glowing pieces! ✨. 
 This early release features fast-paced gameplay, a stylish design and challenges your reflexes.
 
 ## How to Play
