@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,17 +8,18 @@ public class ExplosionCube : MonoBehaviour
     public float force = 300f;
     public float radius = 2f;
     public Camera playerCamera;
-    private GameOverPlayer gameOver;
+
+    private GameOver gameOver;
     private bool cubesCreated = false;
 
-    private void Start() 
+    private void Start()
     {
-        gameOver = GetComponent<GameOverPlayer>();
+        gameOver = FindObjectOfType<GameOver>();
     }
 
     void Update()
     {
-        if(gameOver.gameover == true && !cubesCreated)
+        if (gameOver != null && gameOver.gameover && !cubesCreated)
         {
             StartCoroutine(Main());
         }
@@ -40,27 +40,41 @@ public class ExplosionCube : MonoBehaviour
 
         cubesCreated = true;
 
-        playerCamera.transform.parent = null;
+        if (playerCamera != null)
+        {
+            playerCamera.transform.parent = null;
+        }
+
         gameObject.SetActive(false);
-        yield return new WaitForSeconds(0);
+
+        yield return null; 
     }
 
     private void CreateCube(Vector3 coordinates)
     {
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        // Create a new cube GameObject
+        GameObject cube = new GameObject("ExplodedCube");
 
-        Renderer rd = cube.GetComponent<Renderer>();
-        rd.material = GetComponent<Renderer>().material;
+        // Add components to the cube
+        cube.AddComponent<MeshFilter>().mesh = GetComponent<MeshFilter>().mesh; // Copy the mesh
+        MeshRenderer originalRenderer = GetComponent<MeshRenderer>();
+        MeshRenderer cubeRenderer = cube.AddComponent<MeshRenderer>();
 
+        // Assign all materials from the original object
+        cubeRenderer.materials = originalRenderer.materials;
+
+        // Scale and position the new cube
         cube.transform.localScale = transform.localScale / cubesPerAxis;
+        Vector3 firstCubePosition = transform.position - transform.localScale / 2 + cube.transform.localScale / 2;
+        cube.transform.position = firstCubePosition + Vector3.Scale(coordinates, cube.transform.localScale);
 
-        Vector3 firstCube = transform.position - transform.localScale / 2 + cube.transform.localScale / 2;
-        cube.transform.position = firstCube + Vector3.Scale(coordinates, cube.transform.localScale);
-
+        // Add Rigidbody and apply explosion force
         Rigidbody rb = cube.AddComponent<Rigidbody>();
-        rb.mass = 1f; // Adjust mass as needed
-        rb.collisionDetectionMode = CollisionDetectionMode.Continuous; 
+        cube.AddComponent<BoxCollider>();
+        rb.mass = 1f;
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rb.AddExplosionForce(force, transform.position, radius);
 
+        cube.tag = "LittleCubes";
     }
 }

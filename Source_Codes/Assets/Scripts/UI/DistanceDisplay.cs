@@ -9,18 +9,18 @@ public class DistanceDisplay : MonoBehaviour
     [SerializeField] TMP_Text  text;
     public int disRun;
     public bool addingDis = false;
-    public float disDelay = 0.35f;
+    public float disDelay = 1f;
     LevelStarter levelStarter;
-    GameOverPlayer gameOverPlayer;
+    GameOver gameOver;
     private void Start() 
     {
         levelStarter = GetComponent<LevelStarter>();
-        gameOverPlayer = FindObjectOfType<GameOverPlayer>();
+        gameOver = FindObjectOfType<GameOver>();
     }
 
     void Update()
     {
-        if (addingDis == false && levelStarter.startScore == true && gameOverPlayer.gameover == false)
+        if (addingDis == false && levelStarter.startScore == true && gameOver.gameover == false)
         {
             addingDis = true;
             StartCoroutine(AddingDis());

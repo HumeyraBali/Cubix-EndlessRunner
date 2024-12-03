@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Ground
+  - Coin
+  - SizeGainCube
+  - LittleCubes
   layers:
   - Default
   - TransparentFX

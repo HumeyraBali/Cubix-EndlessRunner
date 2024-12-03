@@ -8,9 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     public TMP_Text highScoreText;
     public TMP_Text coinsText;
+    private GameTimeManager timer;
 
     void Start()
     {
+        timer = FindObjectOfType<GameTimeManager>();
+
         int highScore = PlayerPrefs.GetInt("HighScore", 0); 
         highScoreText.text = highScore.ToString();
 
@@ -19,6 +22,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
+        timer.ResetTimer();
         SceneManager.LoadScene(1);
     }
 

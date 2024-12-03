@@ -10,8 +10,11 @@ public class GameOverPanel : MonoBehaviour
     Collectables collectables;
     public TMP_Text scoreText;
     public TMP_Text coinText;
+    private GameTimeManager timer;
     private void Start() 
     {
+        timer = FindObjectOfType<GameTimeManager>();
+
         scoreManager = FindObjectOfType<ScoreManager>();
         collectables = FindObjectOfType<Collectables>();
 
@@ -20,12 +23,14 @@ public class GameOverPanel : MonoBehaviour
     }
     public void BackToMainMenu()
     {
+        timer.ResetTimer();
         collectables.currentCoins = 0;
         SceneManager.LoadScene(0);
     }
 
     public void ReStartGame()
     {
+        timer.ResetTimer();
         collectables.currentCoins = 0;
         SceneManager.LoadScene(1);
     }

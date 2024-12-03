@@ -5,6 +5,9 @@ using UnityEngine;
 public class GroundManagerMenu : MonoBehaviour
 {
     GroundSpawnMainMenu groundSpawnMenu;
+
+    public GameObject coinPrefab;
+    public GameObject obstaclePrefab;
     void Start()
     {
         groundSpawnMenu = GameObject.FindObjectOfType<GroundSpawnMainMenu>();
@@ -18,8 +21,6 @@ public class GroundManagerMenu : MonoBehaviour
         Destroy(gameObject,4);
     }
 
-    public GameObject obstaclePrefab;
-
     void SpawnObstacle()
     {
         int obstacleSpawnIndex = Random.Range(2,4);
@@ -27,8 +28,6 @@ public class GroundManagerMenu : MonoBehaviour
 
         Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
     }
-
-    public GameObject coinPrefab;
 
     void SpawnCoin()
     {

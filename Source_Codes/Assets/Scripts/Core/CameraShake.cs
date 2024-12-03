@@ -7,12 +7,11 @@ public class CameraShake : MonoBehaviour
     public AnimationCurve curve;
     public float duration = 1f;
     public bool shaked = false;
-    private GameOverPlayer gameOver;
-    [SerializeField] GameObject gameOverPanel;
-    [SerializeField] GameObject scorePanel;
+    private GameOver gameOver;
+
     void Start()
     {
-        gameOver = FindObjectOfType<GameOverPlayer>();
+        gameOver = FindObjectOfType<GameOver>();
     }
 
     void Update()
@@ -35,11 +34,11 @@ public class CameraShake : MonoBehaviour
             transform.position = startPosition + Random.insideUnitSphere * strenght;
             yield return null; 
         }
-
+       
         transform.position = startPosition;
+
         yield return new WaitForSeconds(2);
-        
-        gameOverPanel.SetActive(true);
-        scorePanel.SetActive(false);
+        gameOver.DestroyAllPrefabs();
+        gameOver.GameOverPanelStarter();
     }
 }

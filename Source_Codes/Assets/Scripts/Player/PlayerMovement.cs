@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 20f;
+    public float moveSpeed = 10f;
     public float maxSpeed = 100f;
     public float laneChangeSpeed = 30f; 
     public float laneWidth = 3f; 
@@ -13,11 +13,17 @@ public class PlayerMovement : MonoBehaviour
     private bool leftPressed;
     private bool rightPressed;
     public bool canMove = true;
+    private int maxspeedLevel1 = 30;
+    private int maxspeedLevel2 = 40;
+    public int maxspeedLevel3 = 50;
+
+    private GameTimeManager timer;
     
     private Vector3 targetPosition;
 
     void Start()
     {
+        timer = FindObjectOfType<GameTimeManager>();
         targetPosition = transform.position;
     }
 
@@ -57,7 +63,13 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         if (moveSpeed < maxSpeed) 
-            moveSpeed += 0.7f * Time.deltaTime;
+        {
+            if( 15 < timer.timer && timer.timer < 50  && moveSpeed < maxspeedLevel1) // Level 1
+                moveSpeed += 0.7f * Time.deltaTime;
+            else if(60 <timer.timer && timer.timer < 90 && moveSpeed < maxspeedLevel2) // Level 2
+                moveSpeed += 0.7f * Time.deltaTime;
+        }
+           
 
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
         targetPosition = new Vector3(targetPosition.x,transform.position.y,transform.position.z);
