@@ -4,9 +4,11 @@
 - [Overview](#overview)
 - [How to Play](#how-to-play)
 - [Features](#features)
-  - [Version 1.0](#version-10)
-  - [Version 1.2](#version-12)
   - [Version 1.3](#version-13)
+  - [Version 1.2](#version-12)
+  - [Version 1.0](#version-10)
+  
+  
 - [Credits](#credits)
 
 ## Overview
@@ -21,6 +23,54 @@ This early release features fast-paced gameplay, a stylish design and challenges
 - Try to get the highest score as the pace of the game gradually increases.
 
 ## Features
+
+### Version 1.3
+<p float="left">
+  <img src="Source_Images/9.png" alt="Screenshot 1" width="45%" style="margin: 2.5%;" />
+  <img src="Source_Images/10.png" alt="Screenshot 2" width="45%" style="margin: 2.5%;" />
+</p>
+<p float="left">
+  <img src="Source_Images/11.png" alt="Screenshot 3" width="45%" style="margin: 2.5%;" />
+  <img src="Source_Images/12.png" alt="Screenshot 4" width="45%" style="margin: 2.5%;" />
+</p>
+ 
+- **Visual Effects:**:
+    - **Retro Effect**: Added Post-Processing effects such as bloom, panini projection, vignette, chromatic aberration, film grain, motion blur.
+    - **Fog**: Added fog effect to horizon.
+    - **Grid**: Added grid as main ground for retro effect.
+    - **Particles**: Particle effects are added to collectables.
+
+- **UI**:
+  - **Leaderboard**: Added leader board both main menu and game over panel. Added name and score submit button.
+  - Main menu and game over panel redesigned.
+
+- **Sound**:
+  - Main theme music changed. Crash, collectables, line change and button click sounds are added.
+
+### Version 1.2
+<p float="left">
+  <img src="Source_Images/5.png" alt="Screenshot 1" width="45%" style="margin: 2.5%;" />
+  <img src="Source_Images/6.png" alt="Screenshot 2" width="45%" style="margin: 2.5%;" />
+</p>
+<p float="left">
+  <img src="Source_Images/7.png" alt="Screenshot 3" width="45%" style="margin: 2.5%;" />
+  <img src="Source_Images/8.png" alt="Screenshot 4" width="45%" style="margin: 2.5%;" />
+</p>
+
+- **Player Mechanics**:
+  - Size increase and decrease.
+  - Acceleration depends on level maximum speed.
+
+- **Game Systems**:
+  - **Game Over System**: The player dies when the cube's size shrinks until their health bar is depleted.
+  - **Player Health System**: Player decreases in size over time and increases in size as player collect cubes. The health bar updates according to player size.
+  - **Obstacle System**: There are different types of obstacles: motionless, horizontally moving and vertically moving. They appear by random chance.
+  - **Curved World System**: The world is curved with a custom shader. The curve value is randomly generated on the X or Y axis.
+ 
+- **Visual Effects:**:
+    - **Custom Shaders**: There ara custom shaders for curve and glow effects.
+    - **Player Particle**: Small neon cube particles are present for size loss effect.
+    - **Player Trail**: As the player speed increases, neon trails appear.
 
 ### Version 1
 <p float="left">
@@ -51,54 +101,7 @@ This early release features fast-paced gameplay, a stylish design and challenges
 - **Visual Effects:**:
     - **Post-Processing**: Applied glow effects to the player, obstacles, coins, and ground to give a neon effect.
     - **TextMesh Pro(TMP)**: Texts are styled with glow effects for a polished UI experience.
- 
-### Version 1.2
-<p float="left">
-  <img src="Source_Images/5.png" alt="Screenshot 1" width="45%" style="margin: 2.5%;" />
-  <img src="Source_Images/6.png" alt="Screenshot 2" width="45%" style="margin: 2.5%;" />
-</p>
-<p float="left">
-  <img src="Source_Images/7.png" alt="Screenshot 3" width="45%" style="margin: 2.5%;" />
-  <img src="Source_Images/8.png" alt="Screenshot 4" width="45%" style="margin: 2.5%;" />
-</p>
-
-- **Player Mechanics**:
-  - Size increase and decrease.
-  - Acceleration depends on level maximum speed.
-
-- **Game Systems**:
-  - **Game Over System**: The player dies when the cube's size shrinks until their health bar is depleted.
-  - **Player Health System**: Player decreases in size over time and increases in size as player collect cubes. The health bar updates according to player size.
-  - **Obstacle System**: There are different types of obstacles: motionless, horizontally moving and vertically moving. They appear by random chance.
-  - **Curved World System**: The world is curved with a custom shader. The curve value is randomly generated on the X or Y axis.
- 
-- **Visual Effects:**:
-    - **Custom Shaders**: There ara custom shaders for curve and glow effects.
-    - **Player Particle**: Small neon cube particles are present for size loss effect.
-    - **Player Trail**: As the player speed increases, neon trails appear.
-
-### Version 1.3
-<p float="left">
-  <img src="Source_Images/9.png" alt="Screenshot 1" width="45%" style="margin: 2.5%;" />
-  <img src="Source_Images/10.png" alt="Screenshot 2" width="45%" style="margin: 2.5%;" />
-</p>
-<p float="left">
-  <img src="Source_Images/11.png" alt="Screenshot 3" width="45%" style="margin: 2.5%;" />
-  <img src="Source_Images/12.png" alt="Screenshot 4" width="45%" style="margin: 2.5%;" />
-</p>
- 
-- **Visual Effects:**:
-    - **Retro Effect**: Added Post-Processing effects such as bloom, panini projection, vignette, chromatic aberration, film grain, motion blur.
-    - **Fog**: Added fog effect to horizon.
-    - **Grid**: Added grid as main ground for retro effect.
-    - **Particles**: Particle effects are added to collectables.
-
-- **UI**:
-  - **Leaderboard**: Added leader board both main menu and game over panel. Added name and score submit button.
-  - Main menu and game over panel redesigned.
-
-- **Sound**:
-  - Main theme music changed. Crash, collectables, line change and button click sounds are added.
+      
 
 ## Credits
 
