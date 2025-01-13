@@ -61,8 +61,8 @@ Material:
     - _Blend: 0
     - _CastShadows: 1
     - _Cull: 2
-    - _CurveStrengthX: 0.5
-    - _CurveStrengthY: 0.05
+    - _CurveStrengthX: 0.24230172
+    - _CurveStrengthY: 0.1
     - _DstBlend: 0
     - _ENABLE_PARALLAX_EFFECT: 0
     - _GridRotation: 0

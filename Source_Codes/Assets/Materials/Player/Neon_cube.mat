@@ -130,8 +130,8 @@ Material:
     - _CurveFactor: 0.5
     - _CurveStrenghtX: 1
     - _CurveStrenghtY: 0
-    - _CurveStrengthX: 0.5
-    - _CurveStrengthY: 0.05
+    - _CurveStrengthX: 0.24230172
+    - _CurveStrengthY: 0.1
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1

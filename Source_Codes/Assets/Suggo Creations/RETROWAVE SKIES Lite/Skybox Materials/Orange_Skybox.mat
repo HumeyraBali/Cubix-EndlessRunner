@@ -109,8 +109,8 @@ Material:
     - _Cubemap_Color_Opacity: 1
     - _CullMode: 2
     - _CullModeForward: 2
-    - _CurveStrengthX: 0.5
-    - _CurveStrengthY: 0.05
+    - _CurveStrengthX: 0.24230172
+    - _CurveStrengthY: 0.1
     - _DepthOffsetEnable: 0
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
@@ -134,7 +134,7 @@ Material:
     - _Rotation: 0.033
     - _SrcBlend: 1
     - _StarCollectionX: 0.033
-    - _StarCollectionY: 11.790598
+    - _StarCollectionY: 5.2902904
     - _StarDensity: -1
     - _StarSize: 11.5
     - _StencilRef: 0

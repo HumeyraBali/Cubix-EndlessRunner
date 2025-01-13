@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridManager : MonoBehaviour
+public class GridManagerMenu : MonoBehaviour
 {
-    GroundSpawn groundSpawn;
+    GroundSpawnMainMenu groundSpawn;
 
     void Start()
     {   
-        groundSpawn = GameObject.FindObjectOfType<GroundSpawn>();
+        groundSpawn = GameObject.FindObjectOfType<GroundSpawnMainMenu>();
     }
     private void OnTriggerExit(Collider other)
     {
