@@ -12,6 +12,11 @@ public class GameOver : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject scorePanel;
     public GameObject healthbar;
+    private bool gameoverActive = false;
+    public LeaderboardData leaderboardData;
+    [SerializeField] GameObject leaderboardCanvas;
+    public bool gameovermanuel = false;
+
 
     private void Start() 
     {
@@ -22,9 +27,14 @@ public class GameOver : MonoBehaviour
 
     public void Update() 
     {
-        if ( gameover == true || player.localScale.x <= 0.5f )
+        if (gameovermanuel == true)
         {
-            GameOverStats();
+            if ( gameover == true || player.localScale.x <= 0.5f )
+            {
+                if (!gameoverActive)
+                    GameOverStats();
+                    gameoverActive = true;
+            }
         }
     }
 
@@ -34,6 +44,12 @@ public class GameOver : MonoBehaviour
         playerMovement.moveSpeed = 0f;
         scoreManager.SaveHighScore();
         collectables.SaveCoins();
+
+        if (leaderboardData != null)
+        {
+            int highScore = PlayerPrefs.GetInt("HighScore", 0);
+            leaderboardData.Score = highScore;
+        }
     }
 
 
@@ -74,6 +90,7 @@ public class GameOver : MonoBehaviour
     public void GameOverPanelStarter()
     {
         gameOverPanel.SetActive(true);
+        leaderboardCanvas.SetActive(true);
         scorePanel.SetActive(false);
         healthbar.SetActive(false);
     }

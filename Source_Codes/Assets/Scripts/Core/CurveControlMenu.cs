@@ -42,13 +42,13 @@ public class CurveControlMenu : MonoBehaviour
                     break;
 
                 case 3: // Situation 5: CurveStrengthY = 0 -> 0.5f
-                    curveStrengthY = Mathf.MoveTowards(curveStrengthY, 0.5f, incrementStep * Time.deltaTime);
+                    curveStrengthY = Mathf.MoveTowards(curveStrengthY, 0.05f, incrementStep * Time.deltaTime);
                     if (Mathf.Approximately(curveStrengthY, 0.5f))
                         NextSituation();
                     break;
 
                 case 4: // Situation 6: CurveStrengthY = 0 -> -0.5f
-                    curveStrengthY = Mathf.MoveTowards(curveStrengthY, -0.5f, incrementStep * Time.deltaTime);
+                    curveStrengthY = Mathf.MoveTowards(curveStrengthY, -0.05f, incrementStep * Time.deltaTime);
                     if (Mathf.Approximately(curveStrengthY, -0.5f))
                         NextSituation();
                     break;

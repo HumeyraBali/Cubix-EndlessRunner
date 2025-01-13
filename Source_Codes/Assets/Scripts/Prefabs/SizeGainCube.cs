@@ -6,6 +6,8 @@ using UnityEngine.Rendering;
 public class SizeGainCube : MonoBehaviour
 {
     private Transform player;
+    [SerializeField] ParticleSystem particleSystem;
+
     public float[] targetScales = { 0.51f, 0.6f, 0.7f, 0.8f, 0.9f }; 
     private void Start()
     {
@@ -18,6 +20,11 @@ public class SizeGainCube : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)  
     {
+        ParticleSystem particleInstance = Instantiate(particleSystem, transform.position, Quaternion.identity);
+
+        particleInstance.Play();
+        Destroy(particleInstance.gameObject, particleInstance.main.duration);
+
         this.gameObject.SetActive(false);
         
         if(player.localScale.x < 0.9f)
@@ -26,5 +33,7 @@ public class SizeGainCube : MonoBehaviour
         else
             player.localScale = Vector3.one; 
     }
+
+
 
 }

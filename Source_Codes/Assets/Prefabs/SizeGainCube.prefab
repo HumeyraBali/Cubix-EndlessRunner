@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cae40efdac2487c4d9115c652b6c65f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystem: {fileID: 7148629463447836931, guid: 1cdac78c1c8e51b48b7bae46c2e42ef2, type: 3}
   targetScales:
   - 0.51
   - 0.6

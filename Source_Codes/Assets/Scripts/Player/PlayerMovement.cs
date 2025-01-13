@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private GameTimeManager timer;
     
     private Vector3 targetPosition;
+    public AudioSource audioSource; 
+    public AudioClip lineChangeSound; 
 
     void Start()
     {
@@ -30,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     void UpdateTargetPosition()
     {
         targetPosition = new Vector3((currentLane - 1) * laneWidth, transform.position.y, transform.position.z);
+        PlaySound(lineChangeSound);
     }
 
     void Update()
@@ -79,5 +82,13 @@ public class PlayerMovement : MonoBehaviour
     public void EnableMovement( bool enable )
     {
         canMove = enable;
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 }

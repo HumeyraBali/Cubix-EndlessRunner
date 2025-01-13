@@ -6,24 +6,50 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    public TMP_Text highScoreText;
-    public TMP_Text coinsText;
     private GameTimeManager timer;
+    [SerializeField] GameObject store;
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject LeaderBoardPanel;
+    [SerializeField] GameObject LeaderBoardCanvas;
+    [SerializeField] GameObject firstTimePopup;
+    private bool isFirstTime;
+    private bool firstTimeEnter;
 
     void Start()
     {
         timer = FindObjectOfType<GameTimeManager>();
 
-        int highScore = PlayerPrefs.GetInt("HighScore", 0); 
-        highScoreText.text = highScore.ToString();
+        isFirstTime = !PlayerPrefs.HasKey("HasOpenedBefore");
 
-        int totalCoins = PlayerPrefs.GetInt("TotalCoins", 0); 
-        coinsText.text = totalCoins.ToString(); 
+        if (isFirstTime)
+        {
+            PlayerPrefs.SetInt("HasOpenedBefore", 1); // Mark as opened
+            PlayerPrefs.Save();
+        }
+    }
+
+    public void Update()
+    {
+        if (firstTimeEnter && Input.GetKeyDown(KeyCode.Return))
+        {
+            firstTimeEnter = false;
+            firstTimePopup.SetActive(false);
+            SceneManager.LoadScene(1);
+        }
     }
     public void StartGame()
     {
-        timer.ResetTimer();
-        SceneManager.LoadScene(1);
+        if (isFirstTime)
+        {
+            firstTimeEnter = true;
+            firstTimePopup.SetActive(true); 
+            mainMenu.SetActive(false);
+        }
+        else
+        {
+            timer.ResetTimer();
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void QuitGame()
@@ -31,4 +57,31 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
+    public void LoadLeaderBoardActive()
+    {
+        LeaderBoardCanvas.SetActive(true);
+        LeaderBoardPanel.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+    public void LoadLeaderBoardInActive()
+    {
+        LeaderBoardCanvas.SetActive(false);
+        LeaderBoardPanel.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    public void StoreActive()
+    {
+        store.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+
+    public void StoreInActive()
+    {
+        store.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+
 }

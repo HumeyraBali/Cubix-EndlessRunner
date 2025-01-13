@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class GroundManager : MonoBehaviour
 {
     GroundSpawn groundSpawn;
+    ObstacleMovementY obstacleMovementY;
 
     // Define prefabs on ground
     public GameObject obstaclePrefab1;
@@ -21,6 +23,7 @@ public class GroundManager : MonoBehaviour
     void Start()
     {   
         gameOver = FindObjectOfType<GameOver>();
+        obstacleMovementY = FindObjectOfType<ObstacleMovementY>();
         timer = FindObjectOfType<GameTimeManager>();
         if (!gameOver.gameover)
         {
@@ -88,23 +91,16 @@ public class GroundManager : MonoBehaviour
         int collectableSpawnIndex = Random.Range(5, 8);
         Transform spawnPoint = transform.GetChild(collectableSpawnIndex).transform;
         Quaternion rotation = Quaternion.Euler(0, 0, 45);
-
-        if (player.localScale.x < 0.0f) // when player size will reduce we will spawn cube
+        float spawnChance = Random.Range(0f, 1f);
+        
+        if (spawnChance < 0.3f)
         {
-            //GameObject sizeCube = Instantiate(sizeGainCube, spawnPoint.position, rotation, transform);
+            GameObject sizeCube = Instantiate(sizeGainCube, spawnPoint.position, rotation, transform);
         }
-        else
+        else if (spawnChance > 0.3f && spawnChance < 0.35f)
         {
-            float spawnChance = Random.Range(0f, 1f);
-
-            if (spawnChance < 0.3f)
-            {
-                GameObject sizeCube = Instantiate(sizeGainCube, spawnPoint.position, rotation, transform);
-            }
-            else if (spawnChance > 0.3f && spawnChance < 0.35f)
-            {
-                GameObject coin = Instantiate(coinPrefab, spawnPoint.position, rotation, transform);
-            }
+            GameObject coin = Instantiate(coinPrefab, spawnPoint.position, rotation, transform);
         }
+        
     }
 }

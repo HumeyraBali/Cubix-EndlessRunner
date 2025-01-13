@@ -16,4 +16,6 @@ public class Collectables : MonoBehaviour
         PlayerPrefs.SetInt("TotalCoins", totalCoins); 
         PlayerPrefs.Save(); 
     }
+
+    
 }

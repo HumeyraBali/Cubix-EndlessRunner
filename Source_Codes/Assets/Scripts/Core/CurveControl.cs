@@ -32,8 +32,8 @@ public class CurveControl : MonoBehaviour
                 case 1: // Situation 1: CurveStrengthX = 0 -> 0.4f
                     curveStrengthX = Mathf.MoveTowards(curveStrengthX, 0.4f, incrementStep * Time.deltaTime);
                     if (Mathf.Approximately(curveStrengthX, 0.4f))
-                        // NextSituation();
-                        currentSituation = 3;
+                        NextSituation();
+                        //currentSituation = 3;
                     break;
 
                 case 2: // Situation 2: CurveStrengthX = 0 -> -0.4f
@@ -49,16 +49,16 @@ public class CurveControl : MonoBehaviour
                     break;
 
                 case 4: // Situation 6: CurveStrengthY = 0 -> -0.1f
-                    curveStrengthY = Mathf.MoveTowards(curveStrengthY, -0.1f, incrementStep * Time.deltaTime);
-                    if (Mathf.Approximately(curveStrengthY, -0.1f))
+                    curveStrengthY = Mathf.MoveTowards(curveStrengthY, 0.00f, incrementStep * Time.deltaTime);
+                    if (Mathf.Approximately(curveStrengthY, 0.0f))
                         NextSituation();
-                    break;
+                    break; 
             }
 
             UpdateMaterialProperties();
             
-            if ( timer.timer > 20 && incrementStep < 0.05 )
-                incrementStep += 0.00001f;
+            /*if ( timer.timer > 20 && incrementStep < 0.05 )
+                incrementStep += 0.00001f;*/
 
             //Debug.Log($"Situation: {currentSituation}, CurveStrengthX: {curveStrengthX}, CurveStrengthY: {curveStrengthY}, IncrementStep: {incrementStep}");
         }

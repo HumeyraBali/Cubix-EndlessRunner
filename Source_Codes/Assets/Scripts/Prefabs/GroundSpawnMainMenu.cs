@@ -5,12 +5,22 @@ using UnityEngine;
 public class GroundSpawnMainMenu : MonoBehaviour
 {
     public GameObject groundMenu;
+    public GameObject gridMenu;
     Vector3 nextSpawnPoint;
+    Vector3 nextSpawnPointGridMenu;
+
 
     public GameObject SpawnGroundMenu()
     {
         GameObject temp = Instantiate(groundMenu, nextSpawnPoint, Quaternion.identity);
         nextSpawnPoint = temp.transform.GetChild(1).transform.position;
+        return temp;
+    }
+
+     public GameObject SpawnGrid()
+    {
+        GameObject temp = Instantiate(gridMenu, nextSpawnPointGridMenu, Quaternion.identity);
+        nextSpawnPointGridMenu = temp.transform.GetChild(0).transform.position;
         return temp;
     }
     void Start()
@@ -20,5 +30,8 @@ public class GroundSpawnMainMenu : MonoBehaviour
         {
             SpawnGroundMenu();
         }
+
+        nextSpawnPointGridMenu = new Vector3(0, 0, 5000);
+        SpawnGrid();
     }
 }
