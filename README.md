@@ -35,17 +35,18 @@ This early release features fast-paced gameplay, a stylish design and challenges
 </p>
  
 - **Visual Effects:**:
-    - **Retro Effect**: Added Post-Processing effects such as bloom, panini projection, vignette, chromatic aberration, film grain, motion blur.
-    - **Fog**: Added fog effect to horizon.
-    - **Grid**: Added grid as main ground for retro effect.
-    - **Particles**: Particle effects are added to collectables.
+    - **Retro Effect**: Implemented a retro-inspired look with post-processing effects such as bloom, Panini projection, vignette, chromatic aberration, film grain, and motion blur.
+    - **Atmospheric Fog**: Added a fog effect to enhance the horizon.
+    - **Grid Plane**: Created a grid as the primary ground element for the retro style.
+    - **Collectable Particles**: Introduced particle effects to enhance the visual appeal of collectables.
 
 - **UI**:
-  - **Leaderboard**: Added leader board both main menu and game over panel. Added name and score submit button.
-  - Main menu and game over panel redesigned.
+  - **Leaderboard Integration**: Added leaderboards to both the main menu and the game over panel, featuring name and score submission functionality.
+  - **Menu Redesign**: Redesigned the main menu and game over panel for improved aesthetics and usability.
 
 - **Sound**:
-  - Main theme music changed. Crash, collectables, line change and button click sounds are added.
+  - **Theme Music Update**: Replaced the main theme music with a new track.
+  - **Sound Effects**: Added sound effects for crashes, collectables, line changes, and button clicks.
 
 ### Version 1.2
 <p float="left">
