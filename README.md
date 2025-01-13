@@ -6,6 +6,7 @@
 - [Features](#features)
   - [Version 1.0](#version-10)
   - [Version 1.2](#version-12)
+  - [Version 1.3](#version-13)
 - [Credits](#credits)
 
 ## Overview
@@ -21,7 +22,7 @@ This early release features fast-paced gameplay, a stylish design and challenges
 
 ## Features
 
-### Version 1.0
+### Version 1
 <p float="left">
   <img src="Source_Images/1.png" alt="Screenshot 1" width="45%" style="margin: 2.5%;" />
   <img src="Source_Images/2.png" alt="Screenshot 2" width="45%" style="margin: 2.5%;" />
@@ -76,6 +77,28 @@ This early release features fast-paced gameplay, a stylish design and challenges
     - **Player Particle**: Small neon cube particles are present for size loss effect.
     - **Player Trail**: As the player speed increases, neon trails appear.
 
+### Version 1.3
+<p float="left">
+  <img src="Source_Images/9.png" alt="Screenshot 1" width="45%" style="margin: 2.5%;" />
+  <img src="Source_Images/10.png" alt="Screenshot 2" width="45%" style="margin: 2.5%;" />
+</p>
+<p float="left">
+  <img src="Source_Images/11.png" alt="Screenshot 3" width="45%" style="margin: 2.5%;" />
+  <img src="Source_Images/12.png" alt="Screenshot 4" width="45%" style="margin: 2.5%;" />
+</p>
+ 
+- **Visual Effects:**:
+    - **Retro Effect**: Added Post-Processing effects such as bloom, panini projection, vignette, chromatic aberration, film grain, motion blur.
+    - **Fog**: Added fog effect to horizon.
+    - **Grid**: Added grid as main ground for retro effect.
+    - **Particles**: Particle effects are added to coin and size gain cube.
+
+- **UI**:
+  - **Leaderboard**: Added leader board both main menu and game over panel. Added name and score submit button.
+  - Main menu and game over panel redesigned.
+
+- **Sound**:
+  - Main theme music added. Crash, collect collectables, line change and button click sounds are added.
 
 ## Credits
 
