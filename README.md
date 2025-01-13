@@ -16,7 +16,8 @@ Navigate a neon cube through a glowing endless map! Shrink as you go, grow by co
 This early release features fast-paced gameplay, a stylish design and challenges your reflexes.
 
 ## How to Play
-[Play the game on Unity Play](https://play.unity.com/en/games/e59de455-5914-49e6-90d7-e9e5d8ceab5b/cubix)
+- Unity Play showcase version: [Play the game on Unity Play](https://play.unity.com/en/games/e59de455-5914-49e6-90d7-e9e5d8ceab5b/cubix)
+- Latest version: [Play the game on itch.io](https://curlygamely.itch.io/cubix)
 
 - Movement: Use the arrow keys or WASD.
 - Dodge the obstacles, collect the coins and collect the cubes to gain size.
