@@ -91,14 +91,14 @@ This early release features fast-paced gameplay, a stylish design and challenges
     - **Retro Effect**: Added Post-Processing effects such as bloom, panini projection, vignette, chromatic aberration, film grain, motion blur.
     - **Fog**: Added fog effect to horizon.
     - **Grid**: Added grid as main ground for retro effect.
-    - **Particles**: Particle effects are added to coin and size gain cube.
+    - **Particles**: Particle effects are added to collectables.
 
 - **UI**:
   - **Leaderboard**: Added leader board both main menu and game over panel. Added name and score submit button.
   - Main menu and game over panel redesigned.
 
 - **Sound**:
-  - Main theme music changed. Crash, collect collectables, line change and button click sounds are added.
+  - Main theme music changed. Crash, collectables, line change and button click sounds are added.
 
 ## Credits
 
