@@ -98,7 +98,7 @@ This early release features fast-paced gameplay, a stylish design and challenges
   - Main menu and game over panel redesigned.
 
 - **Sound**:
-  - Main theme music added. Crash, collect collectables, line change and button click sounds are added.
+  - Main theme music changed. Crash, collect collectables, line change and button click sounds are added.
 
 ## Credits
 
